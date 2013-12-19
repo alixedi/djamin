@@ -131,6 +131,9 @@ INSTALLED_APPS = (
     'linaro_django_pagination',
     'tag_parser',
     'coffee_table',
+    'bootstrap_toolkit',
+    'widget_tweaks',
+    'reform',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

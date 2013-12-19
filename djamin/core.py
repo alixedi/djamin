@@ -13,9 +13,28 @@ class ModelDjamin(object):
         if self.queryset is None:
             raise ImproperlyConfigured(("Queryset attribute undefined!"))
         if self.plugins is None:
-            self.plugins = {'list': {'module': 'djamin',
-                                     'class': 'List',
-                                     'config': {'queryset': self.queryset}}}
+            self.plugins =  {
+
+                    'detail':   {'module':  'djamin',
+                                 'class':   'Detail',
+                                 'config':  {'queryset': self.queryset}},
+                    
+                    'list':     {'module':  'djamin',
+                                 'class':   'List',
+                                 'config':  {'queryset': self.queryset}},
+                    
+                    'create':   {'module':  'djamin',
+                                 'class':   'Create',
+                                 'config':  {'queryset': self.queryset}},
+                    
+                    'update':   {'module':  'djamin',
+                                 'class':   'Update',
+                                 'config':  {'queryset': self.queryset}},
+
+                    'delete':   {'module':  'djamin',
+                                 'class':   'Delete',
+                                 'config':  {'queryset': self.queryset}},
+                    }
 
     def load_plugin(self, plugin_name):
         """Loads the given plugin and returns the urls"""
