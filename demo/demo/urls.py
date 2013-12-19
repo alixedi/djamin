@@ -1,21 +1,14 @@
+"""
+Djamin is simple. It does not have introspection and other similar tricks that
+we get with django-admin. As a result, there is no autodiscover etc. However,
+as you may observe, this does not make the API any more complex.
+"""
+
 from django.conf.urls import patterns, include, url
-from django.http import HttpResponse
-
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
-
-def home(request):
-	return HttpResponse('Hello World!')
 
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', home, name='home'),
-    # url(r'^demo/', include('demo.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    # Put your own urls and views that have nothing to do with djamin below
+    # url(r'^home/', 'demo.views.home', name='home'),
+    # This is how you bring-in djamin:
+    url(r'^bookstore/', include('bookstore.urls')),
 )
