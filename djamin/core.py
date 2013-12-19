@@ -14,7 +14,7 @@ class ModelDjamin(object):
             raise ImproperlyConfigured(("Queryset attribute undefined!"))
         if self.plugins is None:
             self.plugins = {'list': {'module': 'djamin',
-                                     'class': 'Listview',
+                                     'class': 'List',
                                      'config': {'queryset': self.queryset}}}
 
     def load_plugin(self, plugin_name):
